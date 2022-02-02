@@ -1,5 +1,5 @@
 package com.revature.p0;
 
-public class MortgageAccount {
+public class MortgageAccount extends Account {
 
 }

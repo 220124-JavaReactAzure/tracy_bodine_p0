@@ -1,5 +1,5 @@
 package com.revature.p0;
 
-public class SavingAccount {
+public class SavingAccount extends Account {
 
 }

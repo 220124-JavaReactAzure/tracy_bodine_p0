@@ -1,5 +1,5 @@
 package com.revature.p0;
 
-public class CheckingAccount {
+public class CheckingAccount extends Account {
 
 }
