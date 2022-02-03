@@ -1,4 +1,4 @@
-package com.revature.p0;
+package com.revature.p0.accounts;
 
 public class SavingAccount extends Account {
 
