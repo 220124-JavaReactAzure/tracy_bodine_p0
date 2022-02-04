@@ -1,4 +1,4 @@
-package com.revature.p0.dao;
+package com.revature.p0.daos;
 
 public class CustomerDAO {
 
