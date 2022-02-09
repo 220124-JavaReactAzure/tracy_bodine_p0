@@ -25,9 +25,9 @@ public class LoginMenu extends Menu {
 
 		// Information needed from the user: username and password
 		 System.out.println("Please enter your account credentials.");
-	     System.out.print("Username: ");
+	     System.out.print("Username:\n" + "> ");
 	     String username = consoleReader.readLine();
-	     System.out.print("Password: ");
+	     System.out.print("Password:\n" + "> ");
 	     String password = consoleReader.readLine();
 	        
 

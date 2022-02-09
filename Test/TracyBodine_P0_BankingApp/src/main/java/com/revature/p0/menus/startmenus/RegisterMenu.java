@@ -24,6 +24,10 @@ public class RegisterMenu extends Menu {
 
 				// Information needed from the user: first name, last name, email, username, password
 
+//				System.out.println("Please provided some basic information");
+//				System.out.print("First Name:\n" + "> ");
+//				String firstName = consoleReader.readLine();
+				
 				System.out.println("Please provided some basic information");
 				System.out.print("First Name: ");
 				String firstName = consoleReader.readLine();

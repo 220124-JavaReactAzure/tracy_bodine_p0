@@ -1,19 +1,21 @@
 package com.revature.p0.models;
 
+
+
 public class Account {
 	private String accountId;
 	private String accountName;
 	private String accountType;
 	private String accountBalance;
 	private Customer originator;
-	
-	
-	// Boilerplate 
+
+	// Boilerplate
 	public Account() {
 		super();
 	}
 
-	public Account(String accountId, String accountName, String accountType, String accountBalance, Customer originator) {
+	public Account(String accountId, String accountName, String accountType, String accountBalance,
+			Customer originator) {
 		super();
 		this.accountId = accountId;
 		this.accountName = accountName;
@@ -76,5 +78,11 @@ public class Account {
 	public void setOriginator(Customer originator) {
 		this.originator = originator;
 	}
+
 	
+	//Using the Double wrapper class to to rewrite the double primitive to a String to make it work with Buffredreader
+	//looks like this will turn all strings into doubles.
+/*	public static String toString(double d) {
+		return FloatingDecimal.toJavaFormatString(d);
+	}*/
 }

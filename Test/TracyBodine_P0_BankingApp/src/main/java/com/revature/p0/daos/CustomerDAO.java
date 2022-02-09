@@ -14,7 +14,7 @@ import com.revature.p0.util.datasource.ConnectionFactory;
 
 public class CustomerDAO implements CrudDAO<Customer> {
 
-	// TODO: Implement Authentication
+	//Authentication
 	public Customer findByUsernameAndPassword(String username, String password) {
 
 		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
@@ -38,7 +38,7 @@ public class CustomerDAO implements CrudDAO<Customer> {
 			}
 
 		} catch (SQLException e) {
-			// TODO: handle exception
+		
 			e.printStackTrace();
 		}
 
@@ -102,6 +102,7 @@ public class CustomerDAO implements CrudDAO<Customer> {
 
 		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
 
+			//converts a 128 bit number to a string value to use as the customer Id
 			newCustomer.setCustomerId(UUID.randomUUID().toString());
 
 			String sql = "insert into customer (customer_id, firstname, lastname, email, username, password) values (?, ?, ?, ?, ?, ?)";

@@ -20,6 +20,7 @@ public class AccountDAO implements CrudDAO<Account> {
 	public Account create(Account newAccount) {
 		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
 
+			//converts a 128 bit number to a string value to use as the account Id
 			newAccount.setAccountId(UUID.randomUUID().toString());
 
 			String sql = "insert into account (accountId, accountName, accountType, accountBalance, originator) values (?, ?, ?, ?, ?)";

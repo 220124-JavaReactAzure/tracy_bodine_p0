@@ -23,13 +23,13 @@ public class AccountCreationMenu extends Menu {
 		System.out.println("Account creation selected");
 
 		// Information needed from the user: account name, account type, and account balance
-		System.out.println("New Account Creation\n" + "Please enter the needed information");
+		System.out.println("New Account Creation\n" + "Please enter the needed information\n");
 		
-		System.out.println("1 - Account name");
+		System.out.println("1 - Account name\n");
 		String accountName = consoleReader.readLine();
-		System.out.println("2 - Account type");
+		System.out.println("2 - Account type\n");
 		String accountType = consoleReader.readLine();
-		System.out.println("3 - Initial account balance");
+		System.out.println("3 - Initial account balance\n");
 		String accountBalance = consoleReader.readLine();
 
 		

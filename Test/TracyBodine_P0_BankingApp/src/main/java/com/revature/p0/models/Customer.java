@@ -88,6 +88,7 @@ public class Customer {
 		this.password = password;
 	}
 
+	//is this needed. it is in the example, but I'm not seeing how it fits with the program.  will comment out until I figure it out.
 //	// Custom Methods
 //	public String toFileString() {
 //		StringBuilder buildFileString = new StringBuilder();
@@ -117,7 +118,7 @@ public class Customer {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(customerId, email, firstName, lastName, password, username);
+		return Objects.hash(customerId, firstName, lastName, email, password, username);
 	}
 
 	@Override
@@ -129,8 +130,8 @@ public class Customer {
 		if (getClass() != obj.getClass())
 			return false;
 		Customer other = (Customer) obj;
-		return Objects.equals(customerId, other.customerId) && Objects.equals(email, other.email)
-				&& Objects.equals(firstName, other.firstName) && Objects.equals(lastName, other.lastName)
+		return Objects.equals(customerId, other.customerId) && Objects.equals(firstName, other.firstName) 
+				&& Objects.equals(lastName, other.lastName) && Objects.equals(email, other.email) 
 				&& Objects.equals(password, other.password) && Objects.equals(username, other.username);
 	}
 
