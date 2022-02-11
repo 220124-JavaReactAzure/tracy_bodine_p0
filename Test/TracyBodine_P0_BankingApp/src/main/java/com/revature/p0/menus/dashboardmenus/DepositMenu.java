@@ -14,25 +14,25 @@ public class DepositMenu extends Menu {
 
 	private AccountService accountService;
 
-		public DepositMenu(BufferedReader consoleReader, MenuRouter router, AccountService accountService) {
+	public DepositMenu(BufferedReader consoleReader, MenuRouter router, AccountService accountService) {
 		super("Deposit", "/deposit", consoleReader, router);
 		this.accountService = accountService;
 	}
 
-	
 	@Override
 	public void render() throws Exception {
-		
-				System.out.println("\nNew Deposit\n");
 
-				// Information needed from the user: first name, last name, email, username, password
-				System.out.println("Please provid deposit details");
-				System.out.print("1 - Account Name: ");
-				String accountName = consoleReader.readLine();
+		System.out.println("\nNew Deposit\n");
 
-				System.out.print("2 - Deposit Amount: ");
-				String depositAmount = consoleReader.readLine();
-				
+		// Information needed from the user: first name, last name, email, username,
+		// password
+		System.out.println("Please provid deposit details");
+		System.out.print("1 - Account Name: ");
+		String accountName = consoleReader.readLine();
+
+		System.out.print("2 - Deposit Amount: ");
+		String depositAmount = consoleReader.readLine();
+
 	}
 }
 
@@ -46,8 +46,7 @@ public class DepositMenu extends Menu {
 //
 //					router.transfer("/welcome");
 //				}
-	
-	
+
 //	//need to figure out how to display accounts from database
 //	@Override
 //	public void render() throws Exception {
@@ -58,4 +57,3 @@ public class DepositMenu extends Menu {
 //		System.out.println("Here is a list of your accounts.");
 //
 //	}
-

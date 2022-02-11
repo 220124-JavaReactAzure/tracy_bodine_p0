@@ -29,10 +29,14 @@ public class AccountMenu extends Menu {
 		}
 
 		while (customerService.isSessionActive()) {
-			System.out.println("\nWelcome " + sessionCustomer.getUsername() + "\n\nMain Menu"
+			System.out.println("\nWelcome " + sessionCustomer.getUsername() + "\n\nAccount Menu"
 					+ "\n\nPlease select from the following options");
-			String menu = "1) View my Accounts\n" + "2) Make a depost\n" + "3) Make a withdrawl\n"
-					+ "4) Return to main menu\n" + "> ";
+			String menu =
+					"1) View my Accounts\n" + 
+					"2) Make a depost\n" + 
+					"3) Make a withdrawl\n" + 
+					"4) Return to main menu\n" + 
+					"> ";
 
 			System.out.print(menu);
 

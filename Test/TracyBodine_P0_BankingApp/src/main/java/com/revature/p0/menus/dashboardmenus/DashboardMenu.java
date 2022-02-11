@@ -30,9 +30,9 @@ public class DashboardMenu extends Menu {
 		while (customerService.isSessionActive()) {
 			System.out.println("\nWelcome " + sessionCustomer.getUsername() + "\n\nMain Menu" + "\n\nPlease select from the following options");
 			String menu = 
-					"1) View/edit my profile information\n" + 
+					"1) View customer profile information\n" + 
 					"2) Create/edit account\n" +
-					"3) View your accounts\n" + 
+					"3) View account informaiton\n" + 
 					"4) Logout\n" + 
 					 "> ";
 
@@ -42,7 +42,7 @@ public class DashboardMenu extends Menu {
 
 			switch (userSelection) {
 			case "1":
-				System.out.println("View/edit profile selected");
+				System.out.println("Customer profile information selected");
 				router.transfer("/user-profile-edit");
 				break;
 			case "2":
@@ -50,8 +50,8 @@ public class DashboardMenu extends Menu {
 				router.transfer("/create-account");
 				break;
 			case "3":
-				System.out.println("View my accounts selected:");
-				router.transfer("/my-accounts");
+				System.out.println("Account informaiton selected:");
+				router.transfer("/account");
 				break;
 			case "4":
 				customerService.logout();
