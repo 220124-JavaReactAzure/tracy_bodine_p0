@@ -31,7 +31,7 @@ public class WithdrawlMenu extends Menu {
 		String accountName = consoleReader.readLine();
 
 		System.out.print("2 - Withdrawl Amount: ");
-		String depositAmount = consoleReader.readLine();
+		String withdrawlAmount = consoleReader.readLine();
 
 	}
 }
