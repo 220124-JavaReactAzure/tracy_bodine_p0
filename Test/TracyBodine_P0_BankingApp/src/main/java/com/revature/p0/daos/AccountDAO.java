@@ -31,8 +31,12 @@ public class AccountDAO implements CrudDAO<Account> {
 			ps.setString(2, newAccount.getAccountName());
 			ps.setString(3, newAccount.getAccountType());
 			ps.setString(4, newAccount.getAccountBalance());
-			ps.setString(5, newAccount.getOriginator().getCustomerId());
-
+			ps.setString(5, newAccount.getOriginator().getUsername());
+						
+			//ps.setString(5, newAccount.getOriginator().getCustomerId());
+			//ps.setString(6, newAccount.getCustomerId());
+			
+			
 			int rowsInserted = ps.executeUpdate();
 
 			if (rowsInserted != 0) {
