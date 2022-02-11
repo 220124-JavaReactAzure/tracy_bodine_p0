@@ -28,8 +28,9 @@ public class DashboardMenu extends Menu {
 		}
 
 		while (customerService.isSessionActive()) {
-			System.out.println("Welcome " + sessionCustomer.getUsername());
-			String menu = "1) View/edit my profile information\n" + 
+			System.out.println("\nWelcome " + sessionCustomer.getUsername() + "\n\nMain Menu" + "\n\nPlease select from the following options");
+			String menu = 
+					"1) View/edit my profile information\n" + 
 					"2) Create/edit account\n" +
 					"3) View your accounts\n" + 
 					"4) Logout\n" + 
