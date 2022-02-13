@@ -41,8 +41,8 @@ public class WelcomeMenu extends Menu{
 		
 		//create the menu options that appear in the console.
 		System.out.print(
-				"Welcome to the Revature Banking App!\n" + "Please please choose from the following options\n" + 
-				"1) Customer Login\n" + "2) New Customer Registration\n" + "3) Exit\n" + "> ");
+				"\nWelcome to the Revature Banking App!\n" + "\nPlease please choose from the following options\n" + 
+				"1) New Customer Registration\n" + "2) Customer Login\n" + "3) Exit\n" + "> ");
 		
 		//using the consoleReader to get the customer input from the console
 		String userSelection = consoleReader.readLine();
@@ -50,10 +50,10 @@ public class WelcomeMenu extends Menu{
 		//switch case to run the selections
 		switch (userSelection) {
 		case "1":
-			router.transfer("/login");
+			router.transfer("/register");
 			break;
 		case "2":
-			router.transfer("/register");
+			router.transfer("/login");
 			break;
 		case "3":
 			shutdown();

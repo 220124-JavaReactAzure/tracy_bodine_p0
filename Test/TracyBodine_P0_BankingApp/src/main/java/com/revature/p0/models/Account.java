@@ -6,7 +6,7 @@ public class Account {
 	private String accountId;
 	private String accountName;
 	private String accountType;
-	private String accountBalance;
+	private Double accountBalance;
 	private Customer originator;
 
 	// Boilerplate
@@ -14,7 +14,7 @@ public class Account {
 		super();
 	}
 
-	public Account(String accountId, String accountName, String accountType, String accountBalance,
+	public Account(String accountId, String accountName, String accountType, Double accountBalance,
 			Customer originator) {
 		super();
 		this.accountId = accountId;
@@ -24,7 +24,7 @@ public class Account {
 		this.originator = originator;
 	}
 
-	public Account(String accountName, String accountType, String accountBalance, Customer originator) {
+	public Account(String accountName, String accountType, Double accountBalance, Customer originator) {
 		super();
 		this.accountName = accountName;
 		this.accountType = accountType;
@@ -32,7 +32,7 @@ public class Account {
 		this.originator = originator;
 	}
 
-	public Account(String accountName, String accountType, String accountBalance) {
+	public Account(String accountName, String accountType, Double accountBalance) {
 		super();
 		this.accountName = accountName;
 		this.accountType = accountType;
@@ -63,11 +63,11 @@ public class Account {
 		this.accountType = accountType;
 	}
 
-	public String getAccountBalance() {
+	public Double getAccountBalance() {
 		return accountBalance;
 	}
 
-	public void setAccountBalance(String accountBalance) {
+	public void setAccountBalance(Double accountBalance) {
 		this.accountBalance = accountBalance;
 	}
 

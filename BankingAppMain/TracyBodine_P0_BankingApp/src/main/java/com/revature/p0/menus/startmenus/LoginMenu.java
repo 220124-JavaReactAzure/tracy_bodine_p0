@@ -21,7 +21,7 @@ public class LoginMenu extends Menu {
 	@Override
 	public void render() throws Exception {
 		
-		System.out.println("User login selected");
+		System.out.println("\nCustomer Login\n");
 
 		// Information needed from the user: username and password
 		 System.out.println("Please enter your account credentials.");

@@ -30,7 +30,7 @@ public class AccountCreationMenu extends Menu {
 		System.out.println("2 - Account type\n");
 		String accountType = consoleReader.readLine();
 		System.out.println("3 - Initial account balance\n");
-		String accountBalance = consoleReader.readLine();
+		Double accountBalance = Double.valueOf(consoleReader.readLine());
 
 		
 		Account newAccount = new Account(accountName, accountType, accountBalance);

@@ -20,7 +20,7 @@ public class RegisterMenu extends Menu {
 	@Override
 	public void render() throws Exception {
 		
-				System.out.println("User registration selected");
+				System.out.println("\nNew Customer Registration\n");
 
 				// Information needed from the user: first name, last name, email, username, password
 
@@ -28,7 +28,7 @@ public class RegisterMenu extends Menu {
 //				System.out.print("First Name:\n" + "> ");
 //				String firstName = consoleReader.readLine();
 				
-				System.out.println("Please provided some basic information");
+				System.out.println("Please provided your customer information");
 				System.out.print("First Name: ");
 				String firstName = consoleReader.readLine();
 

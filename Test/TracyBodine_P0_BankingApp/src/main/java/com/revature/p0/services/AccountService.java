@@ -33,7 +33,7 @@ public class AccountService {
 	private boolean isAccountValid(Account newAccount) {
 		
 		if(newAccount == null) return false;
-		if(newAccount.getAccountName() == null || newAccount.getAccountName().trim().equals("")|| Integer.valueOf(newAccount.getAccountBalance()) < 0) return false;
+		if(newAccount.getAccountName() == null || newAccount.getAccountName().trim().equals("")|| Double.valueOf(newAccount.getAccountBalance()) < 0) return false;
 		return newAccount.getAccountName() != null || !newAccount.getAccountName().trim().equals("");
 	}
 	
