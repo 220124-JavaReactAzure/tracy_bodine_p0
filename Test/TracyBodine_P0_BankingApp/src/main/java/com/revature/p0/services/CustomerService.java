@@ -85,4 +85,9 @@ public class CustomerService {
 	public boolean isSessionActive() {
 		return sessionCustomer != null;
 	}
+
+	public char[] findMyProfile(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

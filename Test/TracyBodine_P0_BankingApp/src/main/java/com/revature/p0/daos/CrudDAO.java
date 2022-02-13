@@ -12,6 +12,7 @@ public interface CrudDAO<T> {
 	// Read
 	List<T> findAll();
 	T findById(String id);
+	T findByUsername(String username);
 	
 	// Update
 	boolean update(T updatedObj);

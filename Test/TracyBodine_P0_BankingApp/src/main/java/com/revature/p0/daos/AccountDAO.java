@@ -2,10 +2,14 @@ package com.revature.p0.daos;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.UUID;
 
 import com.revature.p0.models.Account;
+import com.revature.p0.models.Customer;
+import com.revature.p0.util.collections.LinkedList;
 import com.revature.p0.util.collections.List;
 import com.revature.p0.util.datasource.ConnectionFactory;
 
@@ -51,9 +55,36 @@ public class AccountDAO implements CrudDAO<Account> {
 		return null;
 	}
 
+
 	@Override
 	public List<Account> findAll() {
-		// TODO Auto-generated method stub
+
+		List<Account> accountList = new LinkedList<>();
+
+		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+			String sql = "select * from account";
+			Statement s = conn.createStatement();
+
+			ResultSet resultSet = s.executeQuery(sql);
+
+			while (resultSet.next()) {
+				Account account = new Account();
+				account.setAccountId(resultSet.getString("accountid"));
+				account.setAccountName(resultSet.getString("accountname"));
+				account.setAccountType(resultSet.getString("accounttype"));
+				account.setAccountBalance(resultSet.getDouble("accountbalance"));
+				account.setOriginator(resultSet.getOriginator("originator"));
+				
+				accountList.add(account);
+			}
+
+			return accountList;
+
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
 		return null;
 	}
 
