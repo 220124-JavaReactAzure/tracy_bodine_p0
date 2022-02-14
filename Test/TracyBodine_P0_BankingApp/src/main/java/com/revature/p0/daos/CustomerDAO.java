@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.UUID;
 
+import com.revature.p0.models.Account;
 import com.revature.p0.models.Customer;
 import com.revature.p0.util.collections.LinkedList;
 import com.revature.p0.util.collections.List;
@@ -72,7 +73,7 @@ public class CustomerDAO implements CrudDAO<Customer> {
 	}
 
 	// TODO: Implement FindByUsername
-	public Customer findByUsername(String username) {
+	public Customer findByUsername2(String username) {
 		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
 			String sql = "select * from customer where username = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -182,4 +183,10 @@ public class CustomerDAO implements CrudDAO<Customer> {
 		return false;
 	}
 
-}
+	@Override
+	public Account findByUsername(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+} 

@@ -1,5 +1,7 @@
 package com.revature.p0.daos;
 
+import com.revature.p0.models.Account;
+import com.revature.p0.models.Customer;
 import com.revature.p0.util.collections.List;
 
 public interface CrudDAO<T> {
@@ -12,7 +14,8 @@ public interface CrudDAO<T> {
 	// Read
 	List<T> findAll();
 	T findById(String id);
-	T findByUsername(String username);
+	Account findByUsername(String username);
+	Customer findByUsername2(String username);
 	
 	// Update
 	boolean update(T updatedObj);

@@ -26,7 +26,7 @@ public class CustomerService {
 			throw new InvalidRequestException("Invalid user data provided");
 		}
 
-		boolean usernameAvailable = customerDAO.findByUsername(newCustomer.getUsername()) == null;
+		boolean usernameAvailable = customerDAO.findByUsername2(newCustomer.getUsername()) == null;
 		boolean emailAvailable = customerDAO.findByEmail(newCustomer.getEmail()) == null;
 		
 		if(!usernameAvailable || !emailAvailable) {
@@ -93,6 +93,6 @@ public class CustomerService {
 
 	public Customer findByUsername(String username) {
 		// TODO Auto-generated method stub
-		return customerDAO.findByUsername(username);
+		return customerDAO.findByUsername2(username);
 	}
 }

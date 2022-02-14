@@ -44,6 +44,35 @@ public class AccountDAO implements CrudDAO<Account> {
 		}
 		return null;
 	}
+	
+	public Account findByUsernameAndAccountname(String username, String accountname) {
+
+		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+
+			String sql = "select * from account where username = ? and accountname = ?";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, username);
+			pstmt.setString(2, accountname);
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				Account account = new Account();
+				account.setAccountId(rs.getString("accountid"));
+				account.setAccountName(rs.getString("accountname"));
+				account.setAccountType(rs.getString("accounttype"));
+				account.setAccountBalance(rs.getDouble("accountbalance"));
+//				account.setOriginator(rs.getCustomer("originator"));
+				
+				return account;
+			}
+
+		} catch (SQLException e) {
+		
+			e.printStackTrace();
+		}
+
+		return null;
+	}
 
 	@Override
 	public Account create(Account newAccount) {
@@ -129,6 +158,12 @@ public class AccountDAO implements CrudDAO<Account> {
 	public boolean delete(String id) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public Customer findByUsername2(String username) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -56,7 +56,7 @@ public class ViewMyProfileMenu extends Menu {
 				System.out.println("Edit Profile:");
 				router.transfer("/edit-profile");
 				break;
-			case "3":
+			case "2":
 				System.out.println("Return to main menu:");
 				router.transfer("/dashboard");
 				break;

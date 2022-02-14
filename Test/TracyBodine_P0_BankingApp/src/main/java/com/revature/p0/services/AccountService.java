@@ -4,6 +4,7 @@ import com.revature.p0.daos.AccountDAO;
 import com.revature.p0.exceptions.InvalidRequestException;
 import com.revature.p0.exceptions.ResourcePersistenceException;
 import com.revature.p0.models.Account;
+import com.revature.p0.models.Customer;
 import com.revature.p0.util.collections.List;
 
 public class AccountService {
@@ -37,12 +38,17 @@ public class AccountService {
 		return newAccount.getAccountName() != null || !newAccount.getAccountName().trim().equals("");
 	}
 	
-	public List<Account> findMyAccount(){
-		return null;
+	public List<Account> findMyAccount(String username){
+		return (List<Account>) accountDAO.findByUsername(username);
 	}
 	
 	public List<Account> findAllAccount(){
-		return null;
+		return accountDAO.findAll();
 	}
+
+//	public Account findByUsername(String username) {
+//		// TODO Auto-generated method stub
+//		return accountDAO.findByUsername(username);
+//	}
 
 }
