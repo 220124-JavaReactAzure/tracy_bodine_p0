@@ -12,6 +12,7 @@ import com.revature.p0.menus.dashboardmenus.AccountCreationMenu;
 import com.revature.p0.menus.dashboardmenus.AccountMenu;
 import com.revature.p0.menus.dashboardmenus.DashboardMenu;
 import com.revature.p0.menus.dashboardmenus.DepositMenu;
+import com.revature.p0.menus.dashboardmenus.ViewMyAccountMenu;
 import com.revature.p0.menus.dashboardmenus.ViewMyProfileMenu;
 import com.revature.p0.menus.dashboardmenus.WithdrawlMenu;
 import com.revature.p0.menus.startmenus.LoginMenu;
@@ -48,8 +49,11 @@ public class AppState {
 		router.addMenu(new AccountMenu(consoleReader, router, customerService));
 		router.addMenu(new ViewMyProfileMenu(consoleReader, router, customerService));
 		router.addMenu(new AccountCreationMenu(consoleReader, router, accountService));
-		router.addMenu(new DepositMenu(consoleReader, router, accountService));
+		router.addMenu(new DepositMenu(consoleReader, router, customerService, accountService));
 		router.addMenu(new WithdrawlMenu(consoleReader, router, accountService));
+		// forgot to include the creation of the view my account menu
+		router.addMenu(new ViewMyAccountMenu(consoleReader, router, customerService, accountService));
+		
 		
 		
 		logger.log("Banking App started.");
