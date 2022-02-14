@@ -15,7 +15,8 @@ public class ViewMyAccountMenu extends Menu {
 	private Customer sessionCustomer;
 
 	public ViewMyAccountMenu(BufferedReader consoleReader, MenuRouter router, CustomerService customerService,AccountService accountService) {
-		super("MyAccount", "/my-account", consoleReader, router);
+		// mispelled accounts, forgot s
+		super("MyAccount", "/my-accounts", consoleReader, router); 
 		this.customerService = customerService;
 		this.accountService = accountService;
 	}
@@ -40,10 +41,10 @@ public class ViewMyAccountMenu extends Menu {
 					"2) Make a withdrawl\n" + 
 					"3) Return to main menu\n" + 
 					"> ";
-
-			System.out.println(accountService.findMyAccount(sessionCustomer.getUsername()));
+			System.out.println("Current account balance: \n"+ accountService.findMyAccount(sessionCustomer.getUsername()).getAccountBalance() + "\n");
 			
 			System.out.print(menu);
+			
 
 			String userSelection = consoleReader.readLine();
 
