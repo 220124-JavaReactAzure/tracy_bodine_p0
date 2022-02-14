@@ -38,8 +38,9 @@ public class AccountService {
 		return newAccount.getAccountName() != null || !newAccount.getAccountName().trim().equals("");
 	}
 	
-	public List<Account> findMyAccount(String username){
-		return (List<Account>) accountDAO.findByUsername(username);
+	public Account findMyAccount(String username){
+		// tried to cast an Account to a List<Account> just convert the return type to Account
+		return accountDAO.findByUsername(username); 
 	}
 	
 	public List<Account> findAllAccount(){
