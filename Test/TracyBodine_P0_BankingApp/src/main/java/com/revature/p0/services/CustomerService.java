@@ -86,8 +86,13 @@ public class CustomerService {
 		return sessionCustomer != null;
 	}
 
-	public char[] findMyProfile(String username) {
+	public Customer findMyProfile(String username) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public Customer findByUsername(String username) {
+		// TODO Auto-generated method stub
+		return customerDAO.findByUsername(username);
 	}
 }

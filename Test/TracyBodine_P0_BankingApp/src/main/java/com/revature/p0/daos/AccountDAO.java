@@ -19,6 +19,31 @@ public class AccountDAO implements CrudDAO<Account> {
 	public List<Account> findAccountByCustomerId(String id){
 		return null;
 	}
+	
+	// TODO: Implement FindByUsername
+	public Account findByUsername(String username) {
+		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+			String sql = "select * from account where username = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, username);
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				Account account = new Account();
+				account.setAccountId(rs.getString("accountid"));
+				account.setAccountName(rs.getString("accountname"));
+				account.setAccountType(rs.getString("accounttype"));
+				account.setAccountBalance(rs.getDouble("accountbalance"));
+//				account.setOriginator(rs.getOriginator("originator"));
+				
+				return account;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 	@Override
 	public Account create(Account newAccount) {
@@ -73,7 +98,7 @@ public class AccountDAO implements CrudDAO<Account> {
 				account.setAccountName(resultSet.getString("accountname"));
 				account.setAccountType(resultSet.getString("accounttype"));
 				account.setAccountBalance(resultSet.getDouble("accountbalance"));
-				account.setOriginator(resultSet.getOriginator("originator"));
+//				account.setOriginator(resultSet.getOriginator("originator"));
 				
 				accountList.add(account);
 			}

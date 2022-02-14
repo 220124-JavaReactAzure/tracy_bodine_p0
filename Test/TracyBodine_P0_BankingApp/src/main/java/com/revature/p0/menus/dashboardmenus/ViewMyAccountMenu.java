@@ -33,12 +33,12 @@ public class ViewMyAccountMenu extends Menu {
 		}
 
 		while (customerService.isSessionActive()) {
-			System.out.println("\nWelcome " + sessionCustomer.getUsername() + "\n\nHere is a list of your accounts"
+			System.out.println("\nWelcome " + sessionCustomer.getUsername() + "\n\nAccount View"
 					+ "\n\nPlease select from the following options");
 			String menu = "1) Make a depost\n" + "2) Make a withdrawl\n"
 					+ "3) Return to main menu\n" + "> ";
 
-			System.out.println(accountService.findMyAccount(sessionCustomer.getUsername()));
+			System.out.println(accountService.findMyAccount());
 			
 			System.out.print(menu);
 

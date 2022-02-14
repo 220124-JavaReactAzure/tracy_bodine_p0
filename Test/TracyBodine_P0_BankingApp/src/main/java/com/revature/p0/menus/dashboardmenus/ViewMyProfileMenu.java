@@ -12,7 +12,7 @@ public class ViewMyProfileMenu extends Menu {
 	private final CustomerService customerService;
 	private Customer sessionCustomer;
 
-	public ViewMyProfileMenu(BufferedReader consoleReader, MenuRouter router, CustomerService customerService2) {
+	public ViewMyProfileMenu(BufferedReader consoleReader, MenuRouter router, CustomerService customerService) {
 		super("MyProfile", "/my-profile", consoleReader, router);
 		this.customerService = customerService;
 	
@@ -41,11 +41,11 @@ public class ViewMyProfileMenu extends Menu {
 			System.out.println("\nWelcome " + sessionCustomer.getUsername() + "\n\nProfie View"
 					+ "\n\nPlease select from the following options");
 			String menu = 
-					"2) Edit Profile\n" + 
-					"3) Return to main menu\n" + 
+					"1) Edit Profile\n" + 
+					"2) Return to main menu\n" + 
 					"> ";
 
-			System.out.println(customerService.findMyProfile(sessionCustomer.getUsername()));
+			System.out.println(customerService.findByUsername(sessionCustomer.getUsername()));
 			
 			System.out.print(menu);
 
@@ -53,12 +53,8 @@ public class ViewMyProfileMenu extends Menu {
 
 			switch (userSelection) {
 			case "1":
-				System.out.println("Make a deposit selected");
-				router.transfer("/deposit");
-				break;
-			case "2":
-				System.out.println("Make a withdrawl selected:");
-				router.transfer("/withdrawl");
+				System.out.println("Edit Profile:");
+				router.transfer("/edit-profile");
 				break;
 			case "3":
 				System.out.println("Return to main menu:");
