@@ -13,6 +13,8 @@ import com.revature.p0.util.collections.LinkedList;
 import com.revature.p0.util.collections.List;
 import com.revature.p0.util.datasource.ConnectionFactory;
 
+
+// Updated all the calls to the account table where it was using username to switch to originator
 public class AccountDAO implements CrudDAO<Account> {
 	
 	// TODO: Implement search by customerrID
@@ -23,7 +25,7 @@ public class AccountDAO implements CrudDAO<Account> {
 	// TODO: Implement FindByUsername
 	public Account findByUsername(String username) {
 		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
-			String sql = "select * from account where username = ?";
+			String sql = "select * from account where originator = ?"; // didn't swap to the originator name used in the DB
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, username);
 			ResultSet rs = ps.executeQuery();
@@ -40,7 +42,7 @@ public class AccountDAO implements CrudDAO<Account> {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			// e.printStackTrace();
 		}
 		return null;
 	}
@@ -49,7 +51,7 @@ public class AccountDAO implements CrudDAO<Account> {
 
 		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
 
-			String sql = "select * from account where username = ? and accountname = ?";
+			String sql = "select * from account where o = ? and accountname = ?";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, username);
 			pstmt.setString(2, accountname);
